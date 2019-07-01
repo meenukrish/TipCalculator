@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Restaurant Tip Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-hVpXlpdRmJ+uXGwD5W6HZMnR9ENcKVRn855pPbuI/mwPIEKAuKgTKgGksVGmlAvt" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-/uQFqO50IaQu2rNJYKPpV7zwsWJtd6V4DGX4wMw1ATz4KPuZEV96qQ2heVAw2kr2" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="static/js/app.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- <a class="navbar-brand navbar-default" href="index.html">UFO Sightings
+            <img class="nav-ufo" src="static/images/ufo.svg"> -->
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center table-primary">
+      <h1>Restaurant Tip Calculator</h1>
+      <p></p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+       <div class="col-md-5">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Please the provide details below to calculate your tip:</div>              
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <table>
+                          <tr> 
+                            <td><label>Bill Amount</label></td>
+                            <td><input type="number" name="billtotal" id="billtotal"></input> </td>  
+                          </tr>
+                          <tr>
+                         <td><label >Tip Percentage</label></td>
+                        <td> <select name="tippercent" id="tippercent">
+                                  <option>0%</option>
+                                  <option>10%</option>
+                                  <option>15%</option>
+                                  <option>20%</option>
+                                  <option>25%</option>
+                                  <option>30%</option>
+                                  <option>40%</option>
+                                  <option>50%</option>
+                             </select> </td>
+                          </tr>
+                          <tr>
+                          <td><label >Would you like to split the amount?</label></td>
+                          <td><input type="radio" name="split" id="splityes" value="yes"onchange="showpeople(this)">Yes</input>
+                          <input type="radio" name="split" id="splitno" value="no" checked onchange="hidepeople(this)">No</input></td>
+                          </tr>
+                          <tr id="peoplerow" class="hidepeople">
+                            <td><label>Number of people</label></td>
+                            <td><input type="number" name="nofpeople" id="nofpeople"></select></td>
+                          </tr>
+                          </table>
+                        </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="button" class="btn btn-primary" onclick="submitted()">Calculate Tip</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-5">
+            <div class="panel-heading">Calculated Results:</div>
+          <div id="table-area" class="">
+            <table id="tiptable" class="table table-striped">
+              <thead>                               
+              </thead>
+               <tbody >
+                  <tr>
+                    <td>Total Tip:</td>
+                    <td id="totaltip"></td>
+                  </tr>
+                  <tr id ="tippersonrow" class="hidepeople">
+                    <td>Tip/person:</td>
+                    <td id="tipperperson" ></td>
+                  </tr>
+               </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container fixed-bottom table-primary">
+      <span class="bottom">@Designed by Meenakshi Nadimuthu</span>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+ 
+</body>
+
+</html>
